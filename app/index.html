@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
+        <link rel="stylesheet" href="styles/vendor/idangerous.swiper.css">
         <!-- bower:css -->
 
         <!-- endbower -->
@@ -22,51 +23,82 @@
 
     </head>
     <body>
-        <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
 
+    <style>
+    .swiper-container, .swiper-slide {
+        width: 500px;
+        height: 200px;
+    }
+    </style>
 
-        <div class="container">
-            <div class="header">
-                <ul class="nav nav-pills pull-right">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <h3 class="text-muted">ww</h3>
-            </div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+              <!--First Slide-->
 
-            <div class="jumbotron">
-                <h1>'Allo, 'Allo!</h1>
-                <p class="lead">Always a pleasure scaffolding your apps.</p>
-                <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
-            </div>
-
-            <div class="row marketing">
-                <div class="col-lg-6">
-                    <h4>HTML5 Boilerplate</h4>
-                    <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
-
-                    <h4>Sass with Compass</h4>
-                    <p>Compass is an open-source CSS Authoring Framework that uses Sass.</p>
-
-
-                    <h4>Bootstrap</h4>
-                    <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-
-                    <h4>Modernizr</h4>
-                    <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
-
+              <div class="swiper-container1 swiper-slide">
+                  <div class="swiper-wrapper">
+                      <!--First Slide-->
+                      <div class="swiper-slide" style="background-color: #f00;"> 
+                        One
+                      </div>
+                      
+                      <!--Second Slide-->
+                      <div class="swiper-slide" style="background-color: #0f0;">
+                        Two
+                      </div>
+                      
+                      <!--Third Slide-->
+                      <div class="swiper-slide" style="background-color: #00f;"> 
+                        Three
+                      </div>
+                      <!--Etc..-->
+                  </div>
                 </div>
-            </div>
 
-            <div class="footer">
-                <p>♥ from the Yeoman team</p>
-            </div>
+                <div class="swiper-container2 swiper-slide">
+                  <div class="swiper-wrapper">
+                      <!--First Slide-->
+                      <div class="swiper-slide" id="foo" style="background-color: #0f0;"> 
+                        Alpha
+                      </div>
+                      
+                      <!--Second Slide-->
+                      <div class="swiper-slide" style="background-color: #00f;">
+                        Bravo
+                      </div>
+                      
+                      <!--Third Slide-->
+                      <div class="swiper-slide" style="background-color: #f00;"> 
+                        Charlie
+                      </div>
+                      <!--Etc..-->
+                  </div>
+                </div>  
 
+                <div class="swiper-container3 swiper-slide">
+                  <div class="swiper-wrapper">
+                      <!--First Slide-->
+                      <div class="swiper-slide" style="background-color: #00f;"> 
+                        Uno
+                      </div>
+                      
+                      <!--Second Slide-->
+                      <div class="swiper-slide" style="background-color: #f00;">
+                        Dos
+                      </div>
+                      
+                      <!--Third Slide-->
+                      <div class="swiper-slide" style="background-color: #0f0;"> 
+                        Tres
+                      </div>
+                      <!--Etc..-->
+                  </div>
+                </div>
+              
+
+              
+          </div>
         </div>
-
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
@@ -74,16 +106,7 @@
         <!-- endbower -->
         <!-- endbuild -->
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-
+       
         <!-- build:js scripts/plugins.js -->
         <script src="bower_components/sass-bootstrap/js/affix.js"></script>
         <script src="bower_components/sass-bootstrap/js/alert.js"></script>
@@ -97,10 +120,119 @@
         <script src="bower_components/sass-bootstrap/js/scrollspy.js"></script>
         <script src="bower_components/sass-bootstrap/js/collapse.js"></script>
         <script src="bower_components/sass-bootstrap/js/tab.js"></script>
+        <script src="scripts/vendor/idangerous.swiper.min.js"></script>
+        <script src="scripts/vendor/hammer.min.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
+
+        <script>
+        $(function(){
+          var mySwiper = $('.swiper-container').swiper({
+            //Your options here:
+            mode:'horizontal',
+            loop: false,
+            onSlideChangeEnd : function () {
+                //console.log( 'end' );
+                //mySwiper.destroy();
+            }
+          });
+        });
+
+        /*
+
+        var el = document.getElementById('foo');
+        Hammer(el).on("dragleft dragright", function(event) {
+          var mySwiper = $('.swiper-container').swiper({
+              //Your options here:
+              mode:'horizontal',
+              loop: false,
+              slidesPerView: true,
+              onSlideChangeEnd : function () {
+                  console.log( 'end' );
+                  mySwiper.destroy();
+              }
+              //etc..
+            });
+        });
+
+*/
+
+        //Hammer(el).on("dragup dragdown", function(event) {
+          //console.log(1);
+          var mySwiper2 = $('.swiper-container2').swiper({
+              //Your options here:
+              mode:'vertical',
+              loop: false,
+              slidesPerView: true,
+              onSlideChangeEnd : function () {
+                  //console.log( 'end' );
+                  //mySwiper.destroy();
+              }
+              //etc..
+            });
+
+          var mySwiper3 = $('.swiper-container3').swiper({
+              //Your options here:
+              mode:'vertical',
+              loop: false,
+              slidesPerView: true,
+              onSlideChangeEnd : function () {
+                  //console.log( 'end' );
+                  //mySwiper.destroy();
+              }
+              //etc..
+            });
+        //});
+
+        /*
+        $('.swiper-slide:nth-child(2)').on('mousedown', function (e) {
+            var mySwiper = $('.swiper-container').swiper({
+              //Your options here:
+              mode:'vertical',
+              loop: false,
+              slidesPerView: true,
+              onSlideChangeEnd : function () {
+                  console.log( 'end' );
+                  mySwiper.destroy();
+              }
+              //etc..
+            });
+        });
+*/
+
+        /*
+        $(function (){
+          var mySwiper = $('.swiper-container').swiper({
+            //Your options here:
+            mode:'horizontal',
+            loop: false,
+            slidesPerView: true,
+            onSlideChangeEnd : function () {
+                console.log( 'end' );
+                mySwiper.destroy();
+            }
+            //etc..
+          });
+
+          $('.swiper-slide:nth-child(2)').on('mousedown', function (e) {
+            var mySwiper = $('.swiper-container').swiper({
+            //Your options here:
+            mode:'vertical',
+            loop: false,
+            slidesPerView: true,
+            onSlideChangeEnd : function () {
+                console.log( 'end' );
+                mySwiper.destroy();
+            }
+            //etc..
+          });
+          });
+
+        })
+*/
+        </script>
 </body>
 </html>
