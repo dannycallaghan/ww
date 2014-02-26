@@ -1,0 +1,26 @@
+
+PSD
+===
+
+Canvas 1280 x 900
+Pic 845 x 565
+Horizontal gap 38
+Vertical gap 10
+Left pic showing 183
+Right pic showing 176
+Top to top of pics 149
+
+RESOLUTIONS
+===========
+
+iPhone Retina (4, 4S) - 960 x 640
+iPhone 5 - 1136 x 640
+iPad - 1024 x 768
+iPad Retina - 2048 x 1536
+
+ASPECT
+======
+iPhone Retina (4, 4S) - 3:2
+iPhone 5 - 71:40
+iPad - 4:3
+iPad Retina - 4:3
